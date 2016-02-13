@@ -1,18 +1,19 @@
-# module-template
-A template for Nxus modules. Just fork and you're ready to build.
+# Nxus Module
 
-## How to build
+Your Introduction Goes Here.
 
-1. Fork the repository
-1. Edit `package.json` to use your module name and GitHub repo addresses
-1. Add your module code to files in the `./src` folder
+## Installation
 
-## How to use
+    > npm install <modulename> --save
 
-When you are ready, run `npm run compile` to compile the ES6 code into Javascript.
+## Usage
 
-Any time you run `npm install`, `npm link` or other similar commands, `npm run compile` will be run automatically. 
+Your Install Instructions Go Here
 
-## How to publish
+## API
 
-Simply run `npm publish` and everything will be handled for you.
+### Module
+
+[src/index.js:12-16](https://github.com/nxus/module-template/blob/b84a1e5ed9b5267ef537ea2235cb9af75d44a3d8/src/index.js#L12-L16 "Source code on GitHub")
+
+The Base Nxus Module
