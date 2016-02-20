@@ -1,6 +1,6 @@
 {
   "name": "nxus-asana",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Nxus module for communicating with the Asana API using Personal tokens.",
   "main": "lib",
   "scripts": {
