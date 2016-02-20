@@ -22,7 +22,7 @@ or using an env variable `ASANA_PERSONAL_TOKEN`.
 
 Once the token is present, you can access any of the API endpoints using the corresponding provider:
 
-    app.get('asana-api').users().then(...)
+    app.get('asana-api').users().then((Users) => {Users.findbyId(...)})
 
 For how to use the API, and which methods are provided by each endpoint, take a look at the [Asana API docs](https://asana.com/developers/api-reference/attachments) or the [Asana NPM Module](https://www.npmjs.com/package/asana).
 

@@ -33,13 +33,13 @@ const defaultOpts = {
  * 
  * @example
  *
- * app.get('asana-api').users().then(...)
+ * app.get('asana-api').users().then((Users) => Users.findById(...))
  * 
  */
 export default class Module {
   constructor(app) {
     this.app = app
-    this.opts = _.extend(app.config['asana-api'], defaultOpts)
+    this.opts = _.extend({}, app.config['asana-api'], defaultOpts)
     if(this.app.config.ASANA_PERSONAL_TOKEN)
       this.opts.token = this.app.config.ASANA_PERSONAL_TOKEN
     app.get('asana-api').use(this)
@@ -62,7 +62,7 @@ export default class Module {
    * @return {function} A wrapper for the Asana API Projects endpoint.
    */
   projects() {
-    return this.client.projects
+    return Promise.resolve(this.client.projects)
   }
 
   /**
@@ -70,7 +70,7 @@ export default class Module {
    * @return {function} A wrapper for the Asana API Tasks endpoint.
    */
   tasks() {
-    return this.client.tasks
+    return Promise.resolve(this.client.tasks)
   }
 
   /**
@@ -78,7 +78,7 @@ export default class Module {
    * @return {function} A wrapper for the Asana API Users endpoint.
    */
   users() {
-    return this.client.users
+    return Promise.resolve(this.client.users)
   }
 
   /**
@@ -86,7 +86,7 @@ export default class Module {
    * @return {Object} The current user's object.
    */
   me() {
-    return this.client.users.me()
+    return Promise.resolve(this.client.users.me())
   }
 
   /**
@@ -94,7 +94,7 @@ export default class Module {
    * @return {function} A wrapper for the Asana API Events endpoint.
    */
   events() {
-    return this.client.events
+    return Promise.resolve(this.client.events)
   }
 
   /**
@@ -102,7 +102,7 @@ export default class Module {
    * @return {function} A wrapper for the Asana API Teams endpoint.
    */
   teams() {
-    return this.client.teams
+    return Promise.resolve(this.client.teams)
   }
 
   /**
@@ -110,7 +110,7 @@ export default class Module {
    * @return {function} A wrapper for the Asana API Workspaces endpoint.
    */
   workspaces() {
-    return this.client.workspaces
+    return Promise.resolve(this.client.workspaces)
   }
 
   /**
@@ -118,7 +118,7 @@ export default class Module {
    * @return {function} A wrapper for the Asana API Tags endpoint.
    */
   tags() {
-    return this.client.tags
+    return Promise.resolve(this.client.tags)
   }
 
   /**
@@ -126,7 +126,7 @@ export default class Module {
    * @return {function} A wrapper for the Asana API Stories endpoint.
    */
   stories() {
-    return this.client.stories
+    return Promise.resolve(this.client.stories)
   }
 
   /**
@@ -134,7 +134,7 @@ export default class Module {
    * @return {function} A wrapper for the Asana API Attachments endpoint.
    */
   attachments() {
-    return this.client.attachments
+    return Promise.resolve(this.client.attachments)
   }
 
   _createClient() {
